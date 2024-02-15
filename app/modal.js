@@ -2,6 +2,8 @@ import {  Image, FlatList, StyleSheet } from 'react-native'
 import { Text, View } from '../components/Themed';
 import productSave from '../data/productSave.json'
 import { Avatar, Button, Card, List } from 'react-native-paper';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 export default function ModalScreen() {
   return (
       <View style={styles.container}>
@@ -20,12 +22,15 @@ export default function ModalScreen() {
             <Text style = {{color:'#494949'}}variant="titleLarge">{item.title}</Text>
               <Text style = {{color:'#494949'}}variant="titleLarge">{item.mainText}</Text>
               <Text style = {{color:'#494949'}}variant="bodyMedium">{item.subText}</Text>
-            </Card.Content>
-    
-            <Card.Actions> 
-            <Button style={styles.buttonAction}> Supprimer</Button>
-              <Button>Modifier</Button>
+              <Card.Actions > 
+                <Button style= {styles.btns}>
+            <Icon name="trash" size={22} color="#bf0603" />
+            </Button> 
+            <Button style= {styles.btns}>
+            <Icon name="gear" size={22} color="#90a955" />
+            </Button>
             </Card.Actions>
+            </Card.Content>
           </Card>
           );
         }}
@@ -39,39 +44,40 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#D399EE',
+    backgroundColor: '#dad7cd',
   },
   title: {
     fontSize: 10,
     fontWeight: 'bold',
   },
-  header: {
-    backgroundColor: '#E23148',
-    flexdirection: 'row',
-    justifyContent: 'space-between',
-    alignContent: 'center',
-},
-userImg: {
+  userImg: {
     width: 50,
     height: 50,
     borderRadius: 50/3,
 },
 
-containerCard: {
+  containerCard: {
     marginBottom: 7,
     alignContent: 'center',
     margin: 10,
     borderRadius: 50/1.5,
    
 },
-buttonAction:{
-    backgroundColor:''
-  },
   grandTitre: {
     fontSize: 16,
     fontWeight: 'bold',
     textAlign: 'center',
     color: '#8215A8', 
   },
+
+  btns:{
+    backgroundColor:'#dad7cd',
+    borderWidth: 1, 
+    borderColor: 'transparent', 
+    marginEnd: 5,
+    borderRadius: 60,
+  },
+
+  
 
 });

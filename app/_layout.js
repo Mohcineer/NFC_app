@@ -46,12 +46,12 @@ function RootLayoutNav() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
         <Stack.Screen name="modal" options={{ 
           headerTitle: 'Produits enregistrés',
-          headerTitleStyle: { color:'white', fontSize: 25},
+          headerTitleStyle: { color:'white', fontSize: 30},
           headerStyle: {
-            backgroundColor: '#8215A8',
-  
+            backgroundColor: '#a3b18a',
           },
           presentation: 'modal' }} />
       </Stack>

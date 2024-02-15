@@ -19,18 +19,17 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        // Disable the static render of the header on web
-        // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),
       }}>
-      <Tabs.Screen
-        name="index"
+      
+        <Tabs.Screen
+        name="home"
         options={{
           headerTitle: 'ScanSmart',
           title: 'Accueil',
           headerTitleStyle: { color:'white', fontSize: 30},
           headerStyle: {
-            backgroundColor: '#8215A8',
+            backgroundColor: '#a3b18a',
             elevation: 0,
             shadowOpacity: 0,
             borderBottomWidth: 0,
@@ -52,12 +51,12 @@ export default function TabLayout() {
             </Link>
           ),
         }}
-      />
+      />  
       <Tabs.Screen
         name="two"
         options={{
           headerStyle: {
-            backgroundColor: '#8215A8',
+            backgroundColor: '#a3b18a',
             elevation: 0,
             shadowOpacity: 0,
             borderBottomWidth: 0,
@@ -72,7 +71,7 @@ export default function TabLayout() {
         name="account"    
         options={{
           headerStyle: {
-            backgroundColor: '#8215A8',
+            backgroundColor: '#a3b18a',
             elevation: 0,
             shadowOpacity: 0,
             borderBottomWidth: 0,
@@ -82,7 +81,6 @@ export default function TabLayout() {
           headerTitleStyle: { color:'white', fontSize: 30},
           tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
         }}
-        
       />
     </Tabs>
   );
