@@ -1,7 +1,6 @@
-ScanSmart
 ScanSmart est une application mobile qui utilise la technologie NFC pour authentifier les chaussures et garantir leur authenticité. L'application permet aux utilisateurs de scanner les tags NFC intégrés dans les chaussures pour accéder à des informations détaillées sur le produit et comparer ces informations avec une base de données hébergée sur Supabase, garantissant ainsi l'authenticité des produits.
 
-Fonctionnalités
+Fonctionnalités :
 Scan des tags NFC pour extraire les informations sur les chaussures.
 Comparaison automatique avec une base de données hébergée sur Supabase pour vérifier l'authenticité des chaussures.
 Affichage des détails du produit, y compris la marque, une description et une photo, pour permettre aux utilisateurs de prendre des décisions d'achat éclairées.
