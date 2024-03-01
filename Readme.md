@@ -29,12 +29,6 @@ Suivez les instructions à l'écran pour voir les détails du produit et vérifi
 Contribuer
 Les contributions sont les bienvenues ! Pour contribuer à ScanSmart, veuillez suivre ces étapes :
 
-Forker le projet.
-Créer une nouvelle branche (git checkout -b feature/nouvelle-fonctionnalite).
-Commiter vos modifications (git commit -am 'Ajouter une nouvelle fonctionnalité').
-Pousser la branche (git push origin feature/nouvelle-fonctionnalite).
-Ouvrir une demande de tirage.
 Contact
-Si vous avez des questions ou des commentaires sur ScanSmart, n'hésitez pas à me contacter à l'adresse votre-email@example.com.
+Si vous avez des questions ou des commentaires sur ScanSmart, n'hésitez pas à me contacter à l'adresse ScanSmart@contact.fr.
 
-N'oubliez pas d'adapter ce README avec vos propres informations, comme le lien de votre repository, votre adresse e-mail de contact, etc. Si vous avez des sections supplémentaires que vous souhaitez inclure ou si vous avez besoin de plus d'informations sur un sujet spécifique, n'hésitez pas à le modifier en conséquence !
