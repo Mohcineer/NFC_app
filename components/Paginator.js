@@ -1,5 +1,5 @@
 import React from  "react";
-import { View, Text, StyleSheet, Image, useWindowDimensions, Animated } from "react-native";
+import { View, Text, StyleSheet, Image, useWindowDimensions, Animated, TouchableOpacity } from "react-native";
 import slides from "../slides";
 
 export default Paginator = ({data, scrollX}) => {
@@ -13,8 +13,8 @@ export default Paginator = ({data, scrollX}) => {
                 inputRange,
                 outputRange: [10, 20, 10],
                 extrapolate: 'clamp',
+                
             });
-
             const opacity = scrollX.interpolate({
                 inputRange,
                 outputRange: [0.3, 1, 0.3],
@@ -33,16 +33,18 @@ export default Paginator = ({data, scrollX}) => {
                 />
             );
         })}
-        
+
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     dot: {
-        height: 10,
+        height: 9,
         borderRadius: 5,
-        backgroundColor: '#493d8a',
+        backgroundColor: '#a3b18a',
         marginHorizontal: 8,
-    }
+        marginEnd: 2,
+        justifyContent: 'center',
+    },
 });

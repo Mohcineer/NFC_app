@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Alert, StyleSheet, TextInput, View, Text, TouchableOpacity,Image,} from "react-native";
 import { supabase } from "../../lib/supabase-client";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Stack } from "expo-router";
-
+import { router } from "expo-router";
 
 export default function AuthPage() {
   const [email, setEmail] = useState("");
@@ -12,12 +13,19 @@ export default function AuthPage() {
 //se connecter
   async function signInWithEmail() {
     setLoading(true);
-    const { error } = await supabase.auth.signInWithPassword({
+    const { user, error } = await supabase.auth.signInWithPassword({
       email: email,
       password: password,
     });
 
-    if (error) Alert.alert("Sign In Error", error.message);
+    if (error) {
+      Alert.alert("Sign In Error", error.message);
+      setLoading(false);
+      return;
+    }
+    // Stocker l'ID de l'utilisateur dans le stockage local
+    await AsyncStorage.setItem('userId', user.id);
+    console.log('User ID:', user.id);
     setLoading(false);
   }
   
@@ -52,8 +60,8 @@ export default function AuthPage() {
       
       <Text style={styles.loginText}>Vous ne disposez pas </Text>
       <Text style={styles.loginText}>encore d’un compte ?  </Text>
-      <TouchableOpacity style={styles.subtextAccount} onPress={() => navigation.navigate('signup')}>
-        <Text>Créez le </Text>
+      <TouchableOpacity style={styles.subtextAccount} onPress={() => router.push('/(auth)/signup')}>
+        <Text style={{textDecorationLine: 'underline'}}>Créez un compte en cliquant ici </Text>
       </TouchableOpacity>
 
     </View>
@@ -108,6 +116,3 @@ const styles = StyleSheet.create({
 
   },
 });
-
-
-

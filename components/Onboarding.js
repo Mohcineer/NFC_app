@@ -1,8 +1,9 @@
 import React, {useState, useRef} from  "react";
-import {View, Text, StyleSheet, FlatList, Animated } from "react-native";
+import {View, Text, StyleSheet, FlatList, Animated, } from "react-native";
 import slides from "../slides";
 import OnboardingItem from "./OnboardingItem";
 import Paginator from "./Paginator";
+import NextButton from "../components/NextButton";
 
 export default Onboarding = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -35,6 +36,7 @@ export default Onboarding = () => {
             </View>
 
             <Paginator data={slides} scrollX={scrollX} />
+            <NextButton  percentage={( currentIndex + 1)*(100 / slides.length)}/>
         </View>
         
     );
